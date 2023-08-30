@@ -3,6 +3,7 @@ body {
   margin: 25px;
   color: black;
 }
+
 .logo {
   width: 7%;
   border-radius: 10%;
@@ -10,18 +11,17 @@ body {
   margin-bottom: 10px;
 }
 
-
 .mininum {
   color: darkgrey;
   font-size: 12px;
 }
 
 .currentemp {
-font-weight:600;
-font-size: 48px;
-text-align: right;
-position: relative;
-bottom: 55px;
+  font-weight: 600;
+  font-size: 48px;
+  text-align: right;
+  position: relative;
+  bottom: 55px;
 }
 
 .row {
@@ -32,8 +32,6 @@ bottom: 55px;
   color: darkgrey;
   font-size: 12px;
   margin-bottom: 66px;
-  
-
 }
 
 .hilow {
@@ -41,19 +39,26 @@ bottom: 55px;
   font-size: 14px;
   position: relative;
   top: 30px;
-
 }
 
 .tempicon {
-color: darkgrey;
-font-size: 70px;
-position: relative;
-top: 15px;
+  color: darkgrey;
+  font-size: 70px;
+  position: relative;
+  top: 15px;
 }
 
 #submitbu {
   color: white;
   background: #ab179a;
- border: #ab179a;
+  border: #ab179a;
   border-radius: 5%;
+}
+
+.containter {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ab179a;
+  border-radius: 5px;
 }

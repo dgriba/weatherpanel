@@ -1,178 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-		/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/487fcdfe04.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-			<img src="medias/weather.png" alt="logo" class="logo">
-      <br />
-      <div>
-       <form id="searchline" class="searchbar">
-          <input type="searchform" id="search-input" placeholder="Type a city...">
-          <input type="submit" value="Search" id="submitbu">
-          <span><button id="currentLocButton">Current Location</button></span>
-       </form>
-      
-      </div>
-      <br />
+</head>
 
-			<h1>Guadalajara</h1>
+<body>
+    <div class="container" id="site-containter">
+        <img src="medias/weather.png" alt="logo" class="logo">
+        <br />
+        <div>
+            <form id="searchline" class="searchbar">
+                <input type="searchform" id="search-input" placeholder="Type a city...">
+                <input type="submit" value="Search" id="submitbu">
+                <span><button id="currentLocButton">Current Location</button></span>
+            </form>
 
-      <div class="mininum" id="datetoday"> March 
-      </div>
-    
-      <div class="mininum">Humidity <strong>78%</strong> Wind <strong>54%</strong>
-      </div>
-      
-      <div class="currentemp">
-					<i class="fa-solid fa-sun"></i>
-      <strong id= "currentCelsiusNumber">28</strong> <small>
+        </div>
+        <br />
+
+        <h1>Guadalddddajara</h1>
+
+        <div class="mininum" id="datetoday"> March
+        </div>
+
+        <div class="mininum">Humidity <strong>78%</strong> Wind <strong>54%</strong>
+        </div>
+
+        <div class="currentemp">
+            <i class="fa-solid fa-sun"></i>
+            <strong id="currentCelsiusNumber">28</strong> <small>
              <sup id= "cunit">°C </sup></small> | <small>
                 <sup id= "funit">°F</sup></small>
-      </div>
+        </div>
 
-      <div class="row dow">
-        <div class="col">
-					Mon
-					<br>
-					<i class="fa-solid fa-sun tempicon"></i>
-            <div class="hilow">
-              <strong>30 <sup>°C</sup></strong>/ 9
-            <sup>°C</sup>
-          </div>
+        <div class="row dow">
+            <div class="col">
+                Mon
+                <br>
+                <i class="fa-solid fa-sun tempicon"></i>
+                <div class="hilow">
+                    <strong>30 <sup>°C</sup></strong>/ 9
+                    <sup>°C</sup>
+                </div>
+            </div>
+            <div class="col">Tue
+                <br>
+                <i class="fa-solid fa-cloud-sun tempicon"></i>
+                <div class="hilow">
+                    <strong>26 <sup>°C</sup></strong>/ 5
+                    <sup>°C</sup>
+                </div>
+            </div>
+            <div class="col">Wed
+                <br>
+                <i class="fa-solid fa-cloud-rain tempicon"></i>
+                <div class="hilow">
+                    <strong>21 <sup>°C</sup></strong>/ 4
+                    <sup>°C</sup>
+                </div>
+            </div>
+            <div class="col">Thu
+                <br>
+                <i class="fa-solid fa-cloud-sun tempicon"></i>
+                <div class="hilow">
+                    <strong>23 <sup>°C</sup></strong>/ 4
+                    <sup>°C</sup>
+                </div>
+            </div>
+            <div class="col">Fri
+                <br>
+                <i class="fa-solid fa-wind tempicon"></i>
+                <div class="hilow">
+                    <strong>19 <sup>°C</sup></strong> 3
+                    <sup>°C</sup>
+                </div>
+            </div>
         </div>
-        <div class="col">Tue
-						<br>
-						<i class="fa-solid fa-cloud-sun tempicon"></i>
-						<div class="hilow">
-								<strong>26 <sup>°C</sup></strong>/ 5
-							<sup>°C</sup>
-						</div>	
-				</div>
-        <div class="col">Wed
-						<br>
-						<i class="fa-solid fa-cloud-rain tempicon"></i>
-						<div class="hilow">
-						<strong>21 <sup>°C</sup></strong>/ 4
-					<sup>°C</sup>
-				</div>
-			</div>
-        <div class="col">Thu
-						<br>
-						<i class="fa-solid fa-cloud-sun tempicon"></i>
-						<div class="hilow">
-						<strong>23 <sup>°C</sup></strong>/ 4
-					<sup>°C</sup>
-				</div>
-			</div>
-        <div class="col">Fri
-					<br>
-					<i class="fa-solid fa-wind tempicon"></i>
-					<div class="hilow">
-						<strong>19 <sup>°C</sup></strong> 3
-					<sup>°C</sup>
-				</div>
-			</div>
-        </div>
-      </div>
+        <small>
+      
       <a href="https://github.com/dgriba/weatherpanel">Code Source</a>
-</script>
-<script>
-  // task is to change march to date - pending format
- 
-  
-  let months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ];
-      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-      let now = new Date();
-      let day = days[now.getDay()];
-      let month = months[now.getMonth()];
-      let date = now.getDate();
-      let year = now.getFullYear();
-      let todaydate = (`${day}, ${month} ${date}, ${year}`);
-      let dategoes = document.querySelector("#datetoday");
-      dategoes.innerHTML= (todaydate);
-
-</script>
-    <script>
-      function pwtext(event) {
-          event.preventDefault();
-          let citySearchInput = document.querySelector("#search-input");
-          let h1 = document.querySelector("h1");
-          let cityEntered = citySearchInput.value;
-          h1.innerHTML = cityEntered;
-          let apiKey = "ac209dae1f283fb332a5bb7f50b0f468";
-          let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityEntered}&limit=5&appid=${apiKey}&units=metric`;
-
-
-          function displayWeather(response) {
-              let celtemp = document.querySelector("#currentCelsiusNumber");
-              celtemp.innerHTML = Math.round(response.data.main.temp);
-          }
-          axios.get(apiUrl).then(displayWeather);
-      }
-
-      let cc = document.querySelector("#searchline");
-      cc.addEventListener("submit", pwtext);
-  </script>
-  <script>
-    /* 1. click button : addeventlistener 2. call location with navigator 3. get coords 4. get temperature 5. update "#currentCelsiusNumber" with temp 6. HOW DO I GET THE NAME ----R ESPONSE DATA FROM AXIOS .NAME
-     */
-    function getCoords(params) {
-        let locLat = params.coords.latitude;
-        let locLong = params.coords.longitude;
-        let apiKey = "ac209dae1f283fb332a5bb7f50b0f468";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${locLat}&lon=${locLong}&appid=${apiKey}&units=metric`;
-
-        function showWeatherTemp(weather) {
-            let tempCurrentLocate = Math.round(weather.data.main.temp);
-            let cityCurrentLocate = weather.data.name;
-            let h1 = document.querySelector("h1");
-            h1.innerHTML = cityCurrentLocate;
-            let celtempCurrentlocate = document.querySelector("#currentCelsiusNumber");
-            celtempCurrentlocate.innerHTML = tempCurrentLocate;
-        }
-        axios.get(apiUrl).then(showWeatherTemp);
-    }
-
-    function getCurrentLocate(position) {
-        position.preventDefault();
-        navigator.geolocation.getCurrentPosition(getCoords);
-    }
-    let currentLocButton = document.querySelector("button");
-    currentLocButton.addEventListener("click", getCurrentLocate);
-</script>
-</script>
-      <script src="src/index.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"
-      ></script>
+</small>
     </div>
-  </body>
+
+    </script>
+    <script>
+        // task is to change march to date - pending format
+
+
+        let months = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+        ];
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+        let now = new Date();
+        let day = days[now.getDay()];
+        let month = months[now.getMonth()];
+        let date = now.getDate();
+        let year = now.getFullYear();
+        let todaydate = (`${day}, ${month} ${date}, ${year}`);
+        let dategoes = document.querySelector("#datetoday");
+        dategoes.innerHTML = (todaydate);
+    </script>
+    <script>
+        function pwtext(event) {
+            event.preventDefault();
+            let citySearchInput = document.querySelector("#search-input");
+            let h1 = document.querySelector("h1");
+            let cityEntered = citySearchInput.value;
+            h1.innerHTML = cityEntered;
+            let apiKey = "ac209dae1f283fb332a5bb7f50b0f468";
+            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityEntered}&limit=5&appid=${apiKey}&units=metric`;
+
+
+            function displayWeather(response) {
+                let celtemp = document.querySelector("#currentCelsiusNumber");
+                celtemp.innerHTML = Math.round(response.data.main.temp);
+            }
+            axios.get(apiUrl).then(displayWeather);
+        }
+
+        let cc = document.querySelector("#searchline");
+        cc.addEventListener("submit", pwtext);
+    </script>
+    <script>
+        /* 1. click button : addeventlistener 2. call location with navigator 3. get coords 4. get temperature 5. update "#currentCelsiusNumber" with temp 6. HOW DO I GET THE NAME ----R ESPONSE DATA FROM AXIOS .NAME
+         */
+        function getCoords(params) {
+            let locLat = params.coords.latitude;
+            let locLong = params.coords.longitude;
+            let apiKey = "ac209dae1f283fb332a5bb7f50b0f468";
+            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${locLat}&lon=${locLong}&appid=${apiKey}&units=metric`;
+
+            function showWeatherTemp(weather) {
+                let tempCurrentLocate = Math.round(weather.data.main.temp);
+                let cityCurrentLocate = weather.data.name;
+                let h1 = document.querySelector("h1");
+                h1.innerHTML = cityCurrentLocate;
+                let celtempCurrentlocate = document.querySelector("#currentCelsiusNumber");
+                celtempCurrentlocate.innerHTML = tempCurrentLocate;
+            }
+            axios.get(apiUrl).then(showWeatherTemp);
+        }
+
+        function getCurrentLocate(position) {
+            position.preventDefault();
+            navigator.geolocation.getCurrentPosition(getCoords);
+        }
+        let currentLocButton = document.querySelector("button");
+        currentLocButton.addEventListener("click", getCurrentLocate);
+    </script>
+    </script>
+    <script src="src/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </div>
+</body>
+
 </html>
