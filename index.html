@@ -30,7 +30,7 @@
             <div class="mininum" id="datetoday"> March
             </div>
 
-            <div class="mininum">Humidity <strong>78%</strong> Wind <strong>54%</strong>
+            <div class="mininum">Humidity <strong id="locHumidity">78</strong>% Wind <strong id="locWind">54</strong> km/h
             </div>
 
             <div class="currentemp">
@@ -122,9 +122,12 @@
                 let celtempText = document.querySelector("#currentCelsiusNumber");
                 let celtempResults = Math.round(response.data.main.temp);
                 celtempText.innerHTML = celtempResults;
-
-
-
+                let humidityResults = Math.round(response.data.main.humidity);
+                let humidityText = document.querySelector("#locHumidity");
+                humidityText.innerHTML = humidityResults;
+                let windResults = Math.round(response.data.wind.deg);
+                let windText = document.querySelector("#locWind");
+                windText.innerHTML = windResults;
 
             }
             axios.get(apiUrl).then(displayWeather);
